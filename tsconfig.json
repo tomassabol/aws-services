@@ -1,0 +1,10 @@
+{
+  "extends": "@tsconfig/node22",
+  "compilerOptions": {
+    "lib": ["es2023"],
+    "strict": true,
+    "declaration": true,
+    "outDir": "dist"
+  },
+  "include": ["src"]
+}

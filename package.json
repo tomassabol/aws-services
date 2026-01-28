@@ -1,0 +1,60 @@
+{
+  "name": "@tomassabol/aws-services",
+  "version": "1.8.4-beta.1",
+  "license": "MIT",
+  "description": "AWS Services",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./*": {
+      "import": "./*.js",
+      "require": "./*.js",
+      "types": "./*.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf dist",
+    "dist": "tsc -b tsconfig.build.json && cp package.json dist && cd dist && npm publish",
+    "format": "prettier --check .",
+    "husky-install": "husky install",
+    "lint": "eslint . --max-warnings 0"
+  },
+  "peerDependencies": {
+    "@aws-lambda-powertools/logger": "^2.2.0",
+    "@aws-sdk/client-appconfig": "^3.388.0",
+    "@aws-sdk/client-dynamodb": "^3.388.0",
+    "@aws-sdk/client-eventbridge": "^3.388.0",
+    "@aws-sdk/client-s3": "^3.388.0",
+    "@aws-sdk/client-secrets-manager": "^3.388.0",
+    "@aws-sdk/client-sns": "^3.388.0",
+    "@aws-sdk/client-sqs": "^3.388.0",
+    "@aws-sdk/client-ssm": "^3.388.0",
+    "@aws-sdk/lib-dynamodb": "^3.388.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.2",
+    "@types/node": "^22.18.12",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-markdown": "^3.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.6.2",
+    "prettier-plugin-sh": "^0.12.8",
+    "rimraf": "^5.0.0",
+    "typedoc": "^0.28.14",
+    "typedoc-plugin-markdown": "^3.14.0",
+    "typescript": "^5.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
